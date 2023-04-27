@@ -10,7 +10,11 @@ interface MainProps {
 }
 
 const Main = ({ children }: MainProps) => {
-  return <main className={`${font.className}`}>{children}</main>;
+  return (
+    <main className={`${font.className} bg-light-background h-screen`}>
+      {children}
+    </main>
+  );
 };
 
 export default Main;
