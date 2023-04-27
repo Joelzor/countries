@@ -1,3 +1,26 @@
+import { AiOutlineSearch } from "react-icons/ai";
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="px-5 md:px-12 py-8 md:flex justify-between relative">
+      <input
+        type="text"
+        className="shadow-md py-4 pl-24 w-full mb-8 md:w-2/5 rounded"
+        placeholder="Search for a country..."
+      />
+      <AiOutlineSearch className="absolute text-xl text-neutral-400 top-[52px] left-[60px] md:left-[80px]" />
+
+      <select
+        name="region"
+        className="shadow-md py-4 pl-4 pr-16 self-start rounded"
+      >
+        <option>Filter by Region</option>
+        <option value="africa">Africa</option>
+        <option value="america">America</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
+    </div>
+  );
 }

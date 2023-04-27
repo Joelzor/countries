@@ -11,7 +11,9 @@ interface MainProps {
 
 const Main = ({ children }: MainProps) => {
   return (
-    <main className={`${font.className} bg-light-background h-screen`}>
+    <main
+      className={`${font.className} bg-light-background h-screen font-semibold`}
+    >
       {children}
     </main>
   );
