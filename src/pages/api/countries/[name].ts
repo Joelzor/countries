@@ -21,8 +21,6 @@ const formatData = (country: ICountry) => {
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const name = req.query.name;
 
-  console.log(name);
-
   if (!name) return;
 
   const found = countries.find(
