@@ -31,13 +31,13 @@ interface IFlags {
   png: string;
 }
 
-interface ICurrency {
+export interface ICurrency {
   code: string;
   name: string;
   symbol: string;
 }
 
-interface ILanguage {
+export interface ILanguage {
   iso639_1: string;
   iso639_2: string;
   name: string;
