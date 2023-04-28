@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ICountryDetails } from "@/interfaces/countryDetails";
 import { ICountry } from "@/interfaces/country";
 import { ParsedUrlQuery } from "querystring";
+import DataList from "@/components/DataList";
 
 interface CountryDetailsProps {
   country: ICountryDetails;
@@ -27,6 +28,9 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
     region,
     subregion,
   } = country;
+
+  const languageNames = languages.map((language) => language.name);
+  const currencyNames = currencies.map((currency) => currency.name);
 
   return (
     <section className="px-5 md:px-12">
@@ -73,18 +77,8 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
               <span className="font-black">Top Level Domain: </span>
               {domain}
             </p>
-            <p>
-              <span className="font-black">Currencies: </span>
-              {currencies.map((currency, index) => {
-                return <span key={index}>{currency.name} </span>;
-              })}
-            </p>
-            <p>
-              <span className="font-black">Languages: </span>
-              {languages.map((language, index) => {
-                return <span key={index}>{language.name} </span>;
-              })}
-            </p>
+            <DataList array={currencyNames} title="Currencies" />
+            <DataList array={languageNames} title="Languages" />
           </div>
         </div>
       </div>
