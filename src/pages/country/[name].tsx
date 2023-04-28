@@ -5,6 +5,7 @@ import { ICountryDetails } from "@/interfaces/countryDetails";
 import { ICountry } from "@/interfaces/country";
 import { ParsedUrlQuery } from "querystring";
 import DataList from "@/components/DataList";
+import Borders from "@/components/Borders";
 
 interface CountryDetailsProps {
   country: ICountryDetails;
@@ -79,6 +80,7 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
             </p>
             <DataList array={currencyNames} title="Currencies" />
             <DataList array={languageNames} title="Languages" />
+            <Borders borderCountries={borderCountries} />
           </div>
         </div>
       </div>
