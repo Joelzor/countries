@@ -26,7 +26,7 @@ const Borders = ({ borderCountries }: BordersProps) => {
   }
 
   return (
-    <div className="pb-8">
+    <div className="pb-16">
       <h3 className="text-xl my-5">Border Countries:</h3>
       <div className="flex gap-2 flex-wrap">
         {borderNames.map((name, index) => {

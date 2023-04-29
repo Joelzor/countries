@@ -42,46 +42,48 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
         <span className="text-2xl mr-4">&larr; </span>
         <span className="font-light">Back</span>
       </Link>
-      <div>
+      <div className="lg:flex gap-12 lg:pb-12">
         <Image
           src={flag}
           alt={`${name} flag`}
           width={100}
           height={100}
-          className="w-full"
+          className="w-full lg:w-2/4 self-start"
         />
-        <div>
-          <div className="flex flex-col gap-1 mb-8">
-            <h2 className="text-2xl font-black mt-10 mb-8">{name}</h2>
-            <p>
-              <span className="font-black">Native Name:</span> {nativeName}
-            </p>
-            <p>
-              <span className="font-black">Population: </span>
-              {population.toLocaleString()}
-            </p>
-            <p>
-              <span className="font-black">Region: </span>
-              {region}
-            </p>
-            <p>
-              <span className="font-black">Sub Region: </span>
-              {subregion}
-            </p>
-            <p>
-              <span className="font-black">Capital: </span>
-              {capital}
-            </p>
+        <div className="w-full lg:w-2/4">
+          <h2 className="text-2xl font-black mt-10 mb-8">{name}</h2>
+          <div className="lg:flex gap-24">
+            <div className="flex flex-col gap-1 mb-8">
+              <p>
+                <span className="font-black">Native Name:</span> {nativeName}
+              </p>
+              <p>
+                <span className="font-black">Population: </span>
+                {population.toLocaleString()}
+              </p>
+              <p>
+                <span className="font-black">Region: </span>
+                {region}
+              </p>
+              <p>
+                <span className="font-black">Sub Region: </span>
+                {subregion}
+              </p>
+              <p>
+                <span className="font-black">Capital: </span>
+                {capital}
+              </p>
+            </div>
+            <div className="flex flex-col gap-1">
+              <p>
+                <span className="font-black">Top Level Domain: </span>
+                {domain}
+              </p>
+              <DataList array={currencyNames} title="Currencies" />
+              <DataList array={languageNames} title="Languages" />
+            </div>
           </div>
-          <div className="flex flex-col gap-1">
-            <p>
-              <span className="font-black">Top Level Domain: </span>
-              {domain}
-            </p>
-            <DataList array={currencyNames} title="Currencies" />
-            <DataList array={languageNames} title="Languages" />
-            <Borders borderCountries={borderCountries} />
-          </div>
+          <Borders borderCountries={borderCountries} />
         </div>
       </div>
     </section>
