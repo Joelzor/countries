@@ -6,7 +6,7 @@ interface BordersProps {
 }
 
 const Borders = ({ borderCountries }: BordersProps) => {
-  const [borderNames, setBorderNames] = useState([]);
+  const [borderNames, setBorderNames] = useState<string[] | null>(null);
 
   useEffect(() => {
     const getBorderNames = async () => {
@@ -21,16 +21,26 @@ const Borders = ({ borderCountries }: BordersProps) => {
     getBorderNames();
   }, [borderCountries]);
 
+  if (!borderNames) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
-    <div>
+    <div className="pb-8">
       <h3 className="text-xl my-5">Border Countries:</h3>
-      {borderNames.map((name, index) => {
-        return (
-          <Link href={`/country/${name.toLowerCase()}`} key={index}>
-            {name}
-          </Link>
-        );
-      })}
+      <div className="flex gap-2 flex-wrap">
+        {borderNames.map((name, index) => {
+          return (
+            <Link
+              className="bg-white flex items-center justify-center 2 w-[120px] px-5 shadow-md font-light py-4"
+              href={`/country/${name.toLowerCase()}`}
+              key={index}
+            >
+              {name}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };
