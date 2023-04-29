@@ -29,7 +29,8 @@ const CountryItem = ({ country }: CountryItemProps) => {
               <span className="font-black">Region:</span> {region}
             </p>
             <p>
-              <span className="font-black">Capital:</span> {capital}
+              <span className="font-black">Capital:</span>{" "}
+              {capital ? capital : "Some snowy hill"}
             </p>
           </div>
         </div>
