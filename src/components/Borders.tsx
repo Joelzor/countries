@@ -25,6 +25,15 @@ const Borders = ({ borderCountries }: BordersProps) => {
     return <h1>Loading...</h1>;
   }
 
+  if (!borderCountries) {
+    return (
+      <>
+        <h3 className="text-xl my-5">Border Countries:</h3>
+        <span>We have no border data :(</span>
+      </>
+    );
+  }
+
   return (
     <div className="pb-16">
       <h3 className="text-xl my-5">Border Countries:</h3>

@@ -31,10 +31,19 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
   } = country;
 
   const languageNames = languages.map((language) => language.name);
-  const currencyNames = currencies.map((currency) => currency.name);
+
+  type CurrencyNamesType = string[];
+
+  let currencyNames: CurrencyNamesType;
+
+  if (!currencies) {
+    currencyNames = [];
+  } else {
+    currencyNames = currencies.map((currency) => currency.name);
+  }
 
   return (
-    <section className="px-5 md:px-12">
+    <section className="px-5 md:px-12 lg:h-[90vh]">
       <Link
         href="/"
         className="bg-white flex items-center my-12 w-[180px] px-12 py-1 shadow-md"
@@ -42,7 +51,7 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
         <span className="text-2xl mr-4">&larr; </span>
         <span className="font-light">Back</span>
       </Link>
-      <div className="lg:flex gap-12 lg:pb-12">
+      <div className="lg:flex gap-20 lg:pb-12">
         <Image
           src={flag}
           alt={`${name} flag`}
