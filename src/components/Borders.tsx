@@ -29,7 +29,7 @@ const Borders = ({ borderCountries }: BordersProps) => {
     return (
       <>
         <h3 className="text-xl my-5">Border Countries:</h3>
-        <span>We have no border data :(</span>
+        <span>Probably an island</span>
       </>
     );
   }
@@ -41,7 +41,7 @@ const Borders = ({ borderCountries }: BordersProps) => {
         {borderNames.map((name, index) => {
           return (
             <Link
-              className="bg-white flex items-center justify-center 2 w-[120px] px-5 shadow-md font-light py-4"
+              className="bg-white dark:bg-dark-elements flex items-center justify-center 2 w-[120px] px-5 shadow-md font-light py-4 text-xs"
               href={`/country/${name.toLowerCase()}`}
               key={index}
             >

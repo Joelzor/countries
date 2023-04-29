@@ -46,7 +46,7 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
     <section className="px-5 md:px-12 lg:h-[90vh]">
       <Link
         href="/"
-        className="bg-white flex items-center my-12 w-[180px] px-12 py-1 shadow-md"
+        className="bg-white dark:bg-dark-elements flex items-center my-12 w-[180px] px-12 py-1 shadow-md"
       >
         <span className="text-2xl mr-4">&larr; </span>
         <span className="font-light">Back</span>

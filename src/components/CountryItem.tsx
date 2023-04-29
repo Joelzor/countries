@@ -10,7 +10,7 @@ const CountryItem = ({ country }: CountryItemProps) => {
   const { name, population, region, capital, flag } = country;
   return (
     <Link href="/country/[name]" as={`/country/${name.toLowerCase()}`}>
-      <article className="bg-white rounded shadow-md">
+      <article className="bg-white dark:bg-dark-elements rounded shadow-md">
         <Image
           src={flag}
           height={200}

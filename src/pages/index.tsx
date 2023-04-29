@@ -1,7 +1,7 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { IFormattedCountry } from "@/interfaces/formattedCountry";
 import CountryList from "@/components/CountryList";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 interface HomeProps {
   countries: IFormattedCountry[];
@@ -30,7 +30,7 @@ export default function Home({ countries }: HomeProps) {
       setCountriesList(countries);
     } else {
       setCountriesList(
-        countries.filter((country) => country.region === region)
+        countriesList.filter((country) => country.region === region)
       );
     }
   };
@@ -40,14 +40,14 @@ export default function Home({ countries }: HomeProps) {
       <div className="px-5 md:px-12 py-8 md:flex justify-between relative">
         <input
           type="text"
-          className="shadow-md py-4 pl-24 w-full mb-8 md:w-2/5 rounded"
+          className="shadow-md py-4 pl-24 w-full mb-8 md:w-2/5 rounded dark:bg-dark-elements"
           placeholder="Search for a country..."
           onChange={handleSearch}
         />
         <AiOutlineSearch className="absolute text-xl text-neutral-400 top-[52px] left-[60px] md:left-[80px]" />
 
         <select
-          className="shadow-md py-4 pl-4 pr-16 self-start rounded"
+          className="shadow-md py-4 pl-4 pr-16 self-start rounded dark:bg-dark-elements"
           onChange={handleSelect}
         >
           <option value="all">All Regions</option>
