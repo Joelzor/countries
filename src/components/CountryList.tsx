@@ -7,7 +7,7 @@ interface CountryListProps {
 
 const CountryList = ({ countries }: CountryListProps) => {
   return (
-    <section className="pb-24 px-10 xl:px-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <section className="pb-24 px-10 xl:px-16 grid gap-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-[1380px] w-full mx-auto">
       {countries.map((country, index) => {
         return <CountryItem key={index} country={country} />;
       })}

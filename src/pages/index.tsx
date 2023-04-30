@@ -30,14 +30,14 @@ export default function Home({ countries }: HomeProps) {
       setCountriesList(countries);
     } else {
       setCountriesList(
-        countriesList.filter((country) => country.region === region)
+        countries.filter((country) => country.region === region)
       );
     }
   };
 
   return (
     <>
-      <div className="px-5 md:px-12 py-8 md:flex justify-between relative">
+      <div className="px-5 md:px-12 py-8 md:flex justify-between relative max-w-[1380px] w-full mx-auto">
         <input
           type="text"
           className="shadow-md py-4 pl-24 w-full mb-8 md:w-2/5 rounded dark:bg-dark-elements"

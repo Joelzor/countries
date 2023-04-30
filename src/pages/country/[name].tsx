@@ -43,7 +43,7 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
   }
 
   return (
-    <section className="px-5 md:px-12 lg:h-[90vh]">
+    <section className="px-5 md:px-12 lg:h-[90vh] max-w-[1380px] w-full mx-auto">
       <Link
         href="/"
         className="bg-white dark:bg-dark-elements flex items-center my-12 w-[180px] px-12 py-1 shadow-md"
@@ -51,7 +51,7 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
         <span className="text-2xl mr-4">&larr; </span>
         <span className="font-light">Back</span>
       </Link>
-      <div className="lg:flex gap-20 lg:pb-12">
+      <div className="lg:flex gap-20 lg:pb-12 max-w-[1380px] w-full mx-auto">
         <Image
           src={flag}
           alt={`${name} flag`}
