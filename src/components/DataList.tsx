@@ -5,10 +5,12 @@ interface IDataList<T> {
 
 const DataList = <T,>({ array, title }: IDataList<T>): JSX.Element => {
   if (!array || array.length === 0) {
-    <p>
-      <span className="font-black">{title}: </span>
-      No data found
-    </p>;
+    return (
+      <p>
+        <span className="font-black">{title}: </span>
+        No data found
+      </p>
+    );
   }
 
   const names = array.join(", ");
